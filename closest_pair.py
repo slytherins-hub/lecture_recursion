@@ -26,15 +26,18 @@ def read_file(file_name):
     return data_points
 
 
-def draw_data(data_points):
+def draw_data(data_points, closest_pair=[]):
     """
     Function creates new figure and draw data points into scatter plot.
     :param data_points: (list of lists): each sublist is 1x2 list with x and y coordinate of a point.
+    :param closest_pair: (tuple of ints): indices of the closets pair of points, default = empty list
     :return:
     """
+
     plt.scatter(
-        [point[0] for point in data_points],
-        [point[1] for point in data_points],
+        x=[point[0] for point in data_points],
+        y=[point[1] for point in data_points],
+        color=['blue' if i not in closest_pair else 'red' for i in range(len(data_points))]
     )
     plt.show()
 
