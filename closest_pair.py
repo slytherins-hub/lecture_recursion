@@ -30,7 +30,7 @@ def draw_data(data_points, closest_pair=[]):
     """
     Function creates new figure and draw data points into scatter plot.
     :param data_points: (list of lists): each sublist is 1x2 list with x and y coordinate of a point.
-    :param closest_pair: (tuple of ints): indices of the closets pair of points, default = empty list
+    :param closest_pair: (tuple of ints): indices of the closest pair of points, default = empty list
     :return:
     """
 
