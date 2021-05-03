@@ -37,7 +37,7 @@ def draw_data(data_points, closest_pair=[]):
     plt.scatter(
         x=[point[0] for point in data_points],
         y=[point[1] for point in data_points],
-        color=['blue' if i not in closest_pair else 'red' for i in range(len(data_points))]
+        color=['blue' if point not in closest_pair else 'red' for point in data_points]
     )
     plt.show()
     
