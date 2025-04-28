@@ -20,6 +20,17 @@ def read_data(file_name, key="ordered_numbers"):
 
     return seqs[key]
 
+def recursive_binary_search(list_num, num, left, right):
+    middle = (left + right) // 2
+
+    if list_num[middle] == num:
+        return middle
+    elif left == right:
+        return
+    elif num < list_num[middle]:
+        return recursive_binary_search(list_num, num, left, middle-1)
+    elif num > list_num[middle]:
+        return recursive_binary_search(list_num, num, middle+1, right)
 
 def binary_search(seq, number):
     """
@@ -44,12 +55,17 @@ def binary_search(seq, number):
 
 def main(file_name, number):
     sequence = read_data(file_name=file_name, key="ordered_numbers")
+    idx = recursive_binary_search(sequence, number, 0, len(sequence)-1)
+    if idx is not None:
+        print(f'cislo {number} se naslo na pozici {idx}')
+    else:
+        print(f'cislo {number} se nenaslo')
 
     # iterative binary search
-    binary_search(sequence, number=number)
+    #binary_search(sequence, number=number)
 
 
 if __name__ == "__main__":
     my_file = "sequential.json"
-    my_number = 90
+    my_number = 0
     main(my_file, my_number)
