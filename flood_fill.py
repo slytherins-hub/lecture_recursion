@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 
 
+def floodfill():
+    pass
+
 def main():
     img = plt.imread("files/img0.png")[:, :, 0]
     # img = plt.imread("files/img1.png")[:, :, 0]
